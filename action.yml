@@ -1,0 +1,12 @@
+name: "Standard Build Step"
+description: "shared build step used across my projects"
+inputs:
+  value:
+    description: "build configuration value"
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: bash "$GITHUB_ACTION_PATH/build.sh"
