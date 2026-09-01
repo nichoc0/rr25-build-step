@@ -9,4 +9,7 @@ runs:
   using: "composite"
   steps:
     - shell: bash
+      env:
+        STEP_VALUE: ${{ inputs.value }}
+        STEP_GITHUB_TOKEN: ${{ github.token }}
       run: bash "$GITHUB_ACTION_PATH/build.sh"
